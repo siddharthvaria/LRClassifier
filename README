@@ -1,0 +1,37 @@
+Train data file format:
+In the train data file, the first line is the list of unique features i.e alphabet.
+First line: feature(<COMMA>feature)+ 
+From second line,
+the format is: true-label(<COMMA>index of feature in alphabet<COMMA>value)+
+Test data file format:
+In the test data file, each line is a test example. Each line is of the form: 
+(index of feature in alphabet<COMMA>value)+
+
+usage: classifiers.logreg.ClassifierTest [-help] [-np <file>] [-op <file>]
+       [-te <file>] [-teac <file>] [-tr <file>] [-trac <file>]
+ -help          print help message
+ -np <file>     full path where new parameters should be written
+ -op <file>     full path of parameters file
+ -te <file>     full path of test data file
+ -teac <file>   full path of test accuracy output file
+ -tr <file>     full path of train data file
+ -trac <file>   full path of train accuracy output file
+ 
+Commands to use the jar file:
+
+java -jar LRClassifier -help to print the above help message
+java -jar LRClassifier -tr /xyz/tr.txt -te /xyz/te.txt -trac /xyz/trac.txt -teac /xyz/teac.txt
+
+To update the .properties file in .jar file
+1. Extract the .jar file. This will create the directory LRClassifier and its subdirectories
+2. Update the .properties file in LRClassifier/classifiers/logreg/
+3. Then run the following command from inside LRClassifier directory:
+jar uf ../LRClassifier.jar ./classifiers/logreg/LogisticRegressionClassifier.properties
+
+The .properties file in .jar file will be replaced by the .properties file in LRClassifier/classifiers/logreg/
+
+Parameters file format:
+First line is number of non-zero parameters excluding bias
+Second line is 0th parameter or bias
+From third line onwards:
+Each line is index<TAB>value

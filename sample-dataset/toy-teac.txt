@@ -1,0 +1,5 @@
+predicted<TAB>actual<TAB>features
+0	0	0,0.0,1,-2.0
+0	0	0,-1.0,1,-1.0
+1	1	0,3.0,1,2.0
+Accuracy:100.0
